@@ -2,171 +2,360 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Boycott Canal+ Afrique • Pétition citoyenne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Action Panafricaine · Boycott Canal+ Afrique</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background: linear-gradient(145deg, #0a2f2a 0%, #0c221f 100%);
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            padding: 2rem 1rem;
-            min-height: 100vh;
+            background: #f5f7fb;
+            font-family: 'Inter', sans-serif;
+            color: #1a2a2f;
+            line-height: 1.4;
+            scroll-behavior: smooth;
         }
-        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap');
-        .container { max-width: 1100px; margin: 0 auto; }
-        .petition-card {
-            background: #ffffff;
-            border-radius: 2rem;
-            overflow: hidden;
-            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.4);
+
+        /* animations */
+        @keyframes fadeSlideUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(227, 95, 33, 0.3); }
+            70% { box-shadow: 0 0 0 15px rgba(227, 95, 33, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(227, 95, 33, 0); }
+        }
+
+        @keyframes subtleShine {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 2rem 3rem;
+        }
+
+        /* header section */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(227, 95, 33, 0.12);
+            backdrop-filter: blur(2px);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #e35f21;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.3px;
+        }
+
         .hero {
-            background: linear-gradient(135deg, #e35f21 0%, #d64b0e 100%);
-            padding: 2rem;
-            color: white;
-            text-align: center;
+            margin-bottom: 2rem;
         }
+
         .hero h1 {
-            font-size: 2.2rem;
+            font-size: 3.2rem;
             font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #1A3B34 0%, #D64B0E 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #2c4b42;
+            max-width: 650px;
+            border-left: 4px solid #e35f21;
+            padding-left: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* carte principale */
+        .card-glass {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(0px);
+            border-radius: 2.5rem;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(227, 95, 33, 0.15);
+            overflow: hidden;
+        }
+
+        /* compteur spectaculaire */
+        .counter-panel {
+            background: linear-gradient(145deg, #1e2f2b 0%, #12221e 100%);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            border-radius: 1.8rem;
+            margin: 1.8rem 0;
+            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.2);
+        }
+
+        .counter-label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            opacity: 0.8;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.7rem;
+            gap: 8px;
         }
-        .hero h1 span {
-            background: rgba(255,255,255,0.2);
-            padding: 0.2rem 1rem;
-            border-radius: 60px;
-            font-size: 1.2rem;
-        }
-        .content { padding: 2rem; }
-        .stats {
-            background: #fef5e8;
-            border-radius: 1.5rem;
-            padding: 1.4rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
+
         .counter-number {
-            font-size: 3.8rem;
+            font-size: 5rem;
             font-weight: 800;
-            color: #c2410c;
+            line-height: 1;
+            background: linear-gradient(120deg, #FFB347, #FF7E05);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 0.5rem 0;
         }
+
+        .progress-wrapper {
+            margin: 1rem auto;
+            max-width: 80%;
+        }
+
         progress {
             width: 100%;
-            height: 12px;
+            height: 8px;
             border-radius: 20px;
+            overflow: hidden;
             accent-color: #e35f21;
         }
-        .two-columns {
+        progress::-webkit-progress-bar { background-color: #2d4a42; border-radius: 20px; }
+        progress::-webkit-progress-value { background-color: #e35f21; border-radius: 20px; }
+
+        .target-text {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+
+        /* grille 2 colonnes */
+        .two-col-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
-            margin-top: 0.5rem;
+            margin: 2rem 0 1rem;
         }
-        .form-col { flex: 1.2; min-width: 260px; }
-        .signatures-col { flex: 1; background: #faf9f7; border-radius: 1.5rem; padding: 1.2rem; border: 1px solid #f0e5da; }
-        .form-group { margin-bottom: 1.2rem; }
-        label { font-weight: 600; font-size: 0.85rem; color: #2d3e3a; display: block; margin-bottom: 0.3rem; }
-        select {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            border-radius: 1rem;
-            border: 1.5px solid #e2e8f0;
-            font-size: 0.95rem;
-            background: white;
+
+        .form-column {
+            flex: 1.2;
+            min-width: 260px;
         }
-        select:focus { outline: none; border-color: #e35f21; }
-        button {
-            background: #e35f21;
-            color: white;
-            border: none;
-            padding: 1rem;
-            width: 100%;
-            font-size: 1.1rem;
-            font-weight: 700;
+
+        .signatures-column {
+            flex: 1;
+            background: #ffffff;
             border-radius: 1.5rem;
-            cursor: pointer;
-            transition: 0.2s;
+            padding: 1.4rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #ede6df;
         }
-        button:hover { background: #bf4b13; transform: translateY(-2px); }
-        .signature-list { max-height: 340px; overflow-y: auto; margin-top: 0.8rem; }
-        .signature-item {
+
+        /* select design */
+        .select-modern {
+            width: 100%;
+            padding: 1rem 1rem;
+            border-radius: 1.2rem;
+            border: 1.5px solid #e2e8f0;
             background: white;
-            padding: 0.6rem 0.9rem;
-            margin-bottom: 0.6rem;
-            border-radius: 1rem;
-            border-left: 4px solid #e35f21;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: 0.2s;
+            margin-top: 0.3rem;
+            cursor: pointer;
+        }
+
+        .select-modern:focus {
+            border-color: #e35f21;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(227,95,33,0.15);
+        }
+
+        .btn-primary {
+            background: #e35f21;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 2rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.2s;
+            cursor: pointer;
+            margin-top: 1.2rem;
+            box-shadow: 0 6px 14px rgba(227,95,33,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #bf4b13;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(227,95,33,0.35);
+        }
+
+        /* liste signatures */
+        .signature-list-scroll {
+            max-height: 380px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .signature-card {
+            background: #fefaf7;
+            border-radius: 1.2rem;
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
             text-align: center;
+            transition: 0.1s;
+            border: 1px solid #fae5d6;
         }
-        .signature-country { font-size: 1rem; font-weight: 600; color: #e35f21; }
-        .signature-date { font-size: 0.65rem; color: #b3a084; margin-top: 5px; }
-        .empty-list { color: #a88f78; text-align: center; padding: 1rem; font-style: italic; }
-        .alert { margin-top: 1rem; padding: 0.8rem; border-radius: 1rem; background: #fbe9e7; color: #b33; display: none; }
-        .alert.success { background: #e0f2e9; color: #1f7840; }
-        footer { text-align: center; margin-top: 1.8rem; font-size: 0.75rem; color: #cbd5e0; }
+
+        .flag-icon {
+            font-size: 1.8rem;
+        }
+
+        .country-name {
+            font-weight: 700;
+            color: #a04010;
+            font-size: 0.9rem;
+        }
+
+        .signature-date {
+            font-size: 0.7rem;
+            color: #9b8a78;
+            margin-top: 0.25rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: #c3b5a6;
+        }
+
+        .exigence-box {
+            background: #ffffffef;
+            border-radius: 1.25rem;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            border-left: 6px solid #e35f21;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #6f6f64;
+            border-top: 1px solid #e5ddd4;
+            padding-top: 1.5rem;
+        }
+
         @media (max-width: 750px) {
-            .hero h1 { font-size: 1.6rem; }
-            .counter-number { font-size: 2.5rem; }
+            .container { padding: 1rem; }
+            .hero h1 { font-size: 2.1rem; }
+            .counter-number { font-size: 3rem; }
+            .btn-primary { font-size: 1rem; }
         }
-        .signature-emoji { font-size: 1.5rem; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="petition-card">
-        <div class="hero">
-            <h1>✊ BOYCOTT CANAL+ AFRIQUE <span>50$/mois</span></h1>
-            <p>Pas de Coupe du Monde diffusée en Afrique ? Nous disons STOP. Un clic suffit pour soutenir le boycott.</p>
+    <div class="badge">
+        <i class="fas fa-fist-raised"></i> MOUVEMENT CITOYEN PANAFRICAIN
+    </div>
+    <div class="hero">
+        <h1>CANAL+ AFRIQUE : <br>50 $ / MOIS, ZÉRO MONDIAL.</h1>
+        <div class="hero-desc">
+            Nous payons le prix fort, mais on nous prive du plus grand événement sportif. <strong>Assez d'injustice.</strong> Signez en un clic.
         </div>
-        <div class="content">
-            <div class="stats">
-                <h3>📢 NOMBRE DE SOUTIENS</h3>
-                <div class="counter-number" id="signatureCount">0</div>
+    </div>
+
+    <div class="card-glass">
+        <div class="counter-panel">
+            <div class="counter-label">
+                <i class="fas fa-users"></i> ENGAGEMENT POPULAIRE
+            </div>
+            <div class="counter-number" id="signatureCount">0</div>
+            <div class="progress-wrapper">
                 <progress id="progressBar" value="0" max="100000"></progress>
-                <div class="target-text">🎯 Objectif : 100 000 citoyens engagés</div>
+                <div class="target-text">🎯 OBJECTIF : 100 000 SOUTIENS — L'UNION FAIT LA FORCE</div>
+            </div>
+        </div>
+
+        <div style="padding: 0 2rem 2rem 2rem;">
+            <div class="exigence-box">
+                <i class="fas fa-balance-scale" style="color:#e35f21; margin-right:8px;"></i> <strong>NOS EXIGENCES OFFICIELLES</strong><br>
+                ▪ Diffuser la Coupe du Monde en Afrique SANS augmentation<br>
+                ▪ OU réduire l'abonnement à 15 $/mois (service sans l'événement phare)<br>
+                ▪ OU remboursement partiel des abonnés pour rupture d'attente légitime.
             </div>
 
-            <div style="background:#fef0e6; border-radius:1rem; padding:0.8rem 1rem; margin-bottom:1.5rem; border-left:5px solid #e35f21;">
-                <p style="font-weight:700">⚠️ Nos exigences :</p>
-                <ul style="margin-left:1.2rem; font-size:0.85rem;">
-                    <li>Diffusion de la Coupe du Monde en Afrique sans augmentation</li>
-                    <li>Réduction de l'abonnement à 15$/mois si absent</li>
-                    <li>Remboursement partiel pour les abonnés lésés</li>
-                </ul>
-            </div>
-
-            <div class="two-columns">
-                <div class="form-col">
+            <div class="two-col-grid">
+                <!-- Colonne formulaire -->
+                <div class="form-column">
                     <form id="petitionForm">
-                        <div class="form-group">
-                            <label>🌍 Sélectionnez votre pays *</label>
-                            <select id="country" required>
-                                <option value="">-- Choisissez votre pays --</option>
-                                <option>Côte d'Ivoire</option><option>Sénégal</option><option>Cameroun</option>
-                                <option>Mali</option><option>Burkina Faso</option><option>République Dém. du Congo</option>
-                                <option>Gabon</option><option>Bénin</option><option>Togo</option><option>Niger</option>
-                                <option>Guinée</option><option>Madagascar</option><option>Autre pays africain</option>
-                            </select>
-                        </div>
-                        <button type="submit">✊ JE SOUTIENS LE BOYCOTT</button>
+                        <label style="font-weight: 600; font-size: 0.85rem;"><i class="fas fa-globe-africa"></i> Je soutiens depuis :</label>
+                        <select id="country" class="select-modern" required>
+                            <option value="">-- Sélectionnez votre pays --</option>
+                            <option>Côte d'Ivoire</option><option>Sénégal</option><option>Cameroun</option>
+                            <option>Mali</option><option>Burkina Faso</option><option>République Dém. du Congo</option>
+                            <option>Gabon</option><option>Bénin</option><option>Togo</option><option>Niger</option>
+                            <option>Guinée</option><option>Madagascar</option><option>Autre pays africain</option>
+                        </select>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-hand-fist"></i> SIGNER LE BOYCOTT
+                        </button>
+                        <p style="font-size: 0.7rem; text-align: center; margin-top: 1rem; color: #2c5a4e;">
+                            ⚡ 1 clic • sans inscription • engagement citoyen
+                        </p>
                     </form>
-                    <div id="messageAlert" class="alert"></div>
-                    <p style="font-size:0.7rem; text-align:center; margin-top:0.8rem; color:#8b6b4f;">✅ Un clic suffit • Pas d'inscription • Soutenez massivement</p>
+                    <div id="messageAlert" style="margin-top: 1rem;"></div>
                 </div>
 
-                <div class="signatures-col">
-                    <div style="font-weight:700; margin-bottom:12px;">🕊️ Derniers soutiens</div>
-                    <div id="signatureListContainer" class="signature-list">
-                        <div class="empty-list">Chargement...</div>
+                <!-- Colonne live -->
+                <div class="signatures-column">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0dfd2; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        <span><i class="fas fa-clock"></i> DERNIERS SOUTIENS</span>
+                        <span style="font-size: 0.7rem; background: #f2ede8; padding: 0.2rem 0.6rem; border-radius: 40px;">🇿🇦 en direct</span>
+                    </div>
+                    <div id="signatureListContainer" class="signature-list-scroll">
+                        <div class="empty-state"><i class="fas fa-charging-station"></i> Chargement de la vague citoyenne...</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer>📢 Mouvement citoyen panafricain — Boycott pacifique et déterminé</footer>
+    <div class="footer-note">
+        <i class="fas fa-shield-alt"></i> Pétition officielle · Résiliation massive appelée · Transparence totale<br>
+        #BoycottCanalAfrique · Partager massivement pour faire plier l'injustice
+    </div>
 </div>
 
 <script>
@@ -176,25 +365,29 @@
         try {
             const response = await fetch(`${API_BASE}/api/signatures`);
             const data = await response.json();
-            document.getElementById('signatureCount').innerText = data.total.toLocaleString();
-            const progress = document.getElementById('progressBar');
-            progress.value = Math.min(data.total, 100000);
-            progress.max = 100000;
+            const countEl = document.getElementById('signatureCount');
+            if (countEl) countEl.innerText = data.total.toLocaleString();
+            const progressBar = document.getElementById('progressBar');
+            if (progressBar) {
+                progressBar.value = Math.min(data.total, 100000);
+                progressBar.max = 100000;
+            }
 
             const container = document.getElementById('signatureListContainer');
-            if (data.recent.length === 0) {
-                container.innerHTML = '<div class="empty-list">Soyez le premier à soutenir ! ✊</div>';
+            if (!container) return;
+            if (!data.recent || data.recent.length === 0) {
+                container.innerHTML = '<div class="empty-state"><i class="fas fa-map-africa"></i> Soyez le premier soutien !</div>';
                 return;
             }
             container.innerHTML = data.recent.map(sig => `
-                <div class="signature-item">
-                    <div class="signature-emoji">🇿🇦</div>
-                    <div class="signature-country">${escapeHtml(sig.country)}</div>
-                    <div class="signature-date">${formatDate(sig.date)}</div>
+                <div class="signature-card">
+                    <div class="flag-icon">🌍</div>
+                    <div class="country-name">${escapeHtml(sig.country)}</div>
+                    <div class="signature-date">✊ ${formatDate(sig.date)}</div>
                 </div>
             `).join('');
-        } catch (err) {
-            console.error(err);
+        } catch(e) {
+            console.warn(e);
         }
     }
 
@@ -209,52 +402,53 @@
     }
 
     function formatDate(dateString) {
-        if (!dateString) return 'Récemment';
+        if (!dateString) return 'à l’instant';
         try {
             const date = new Date(dateString);
             return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute:'2-digit' });
-        } catch(e) { return 'Nouveau'; }
+        } catch(e) { return 'récemment'; }
     }
 
     function showMessage(msg, isSuccess) {
         const alertDiv = document.getElementById('messageAlert');
-        alertDiv.innerText = msg;
-        alertDiv.className = 'alert ' + (isSuccess ? 'success' : '');
-        alertDiv.style.display = 'block';
-        setTimeout(() => { alertDiv.style.display = 'none'; }, 4000);
+        alertDiv.innerHTML = `<div style="background:${isSuccess ? '#e3f5ef' : '#fee3e0'}; color:${isSuccess ? '#1e6f3f' : '#c23d2b'}; padding:0.8rem; border-radius:1rem; font-weight:500; border-left:4px solid ${isSuccess ? '#2b9b5a' : '#e35f21'};">${msg}</div>`;
+        setTimeout(() => {
+            alertDiv.innerHTML = '';
+        }, 4500);
     }
 
-    document.getElementById('petitionForm').addEventListener('submit', async (e) => {
+    // Gestion formulaire + deviceId pour éviter doublon
+    let deviceId = localStorage.getItem('deviceId');
+    if (!deviceId) {
+        deviceId = 'dev_' + Math.random().toString(36) + Date.now();
+        localStorage.setItem('deviceId', deviceId);
+    }
+
+    const form = document.getElementById('petitionForm');
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const country = document.getElementById('country').value;
-
         if (!country) {
-            showMessage("⚠️ Veuillez sélectionner votre pays.", false);
+            showMessage("Veuillez sélectionner votre pays avant de signer.", false);
             return;
-        }
-
-        // Générer un identifiant unique basé sur IP + pays pour éviter les doublons (simple)
-        const deviceId = localStorage.getItem('deviceId');
-        if (!deviceId) {
-            localStorage.setItem('deviceId', Math.random().toString(36));
         }
 
         try {
             const response = await fetch(`${API_BASE}/api/sign-simple`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ country, deviceId: localStorage.getItem('deviceId') })
+                body: JSON.stringify({ country, deviceId })
             });
             const result = await response.json();
             if (response.ok) {
-                showMessage("✅ Merci pour votre soutien ! Votre voix compte. Partagez maintenant 📢", true);
-                document.getElementById('petitionForm').reset();
+                showMessage(`✅ ${country} · Merci pour votre engagement ! Votre voix rejoint le mouvement. Partager c'est lutter.`, true);
+                document.getElementById('country').value = "";
                 fetchSignatures();
             } else {
-                showMessage(result.error || "Erreur. Vous avez déjà soutenu ?", false);
+                showMessage(result.error || "Vous avez déjà soutenu avec cet appareil. Merci !", false);
             }
         } catch (err) {
-            showMessage("Erreur réseau. Réessayez.", false);
+            showMessage("Erreur réseau. Réessayez ou vérifiez votre connexion.", false);
         }
     });
 
