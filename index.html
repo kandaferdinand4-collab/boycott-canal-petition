@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Boycott Canal+ Afrique • Pétition officielle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0a2f2a 0%, #0c221f 100%);
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap');
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .petition-card {
+            background: #ffffff;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e35f21 0%, #d64b0e 100%);
+            padding: 2rem;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .hero h1 span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            font-size: 1.2rem;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .stats {
+            background: #fef5e8;
+            border-radius: 1.5rem;
+            padding: 1.4rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .counter-number {
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: #c2410c;
+        }
+
+        progress {
+            width: 100%;
+            height: 12px;
+            border-radius: 20px;
+            accent-color: #e35f21;
+        }
+
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .form-col {
+            flex: 1.2;
+            min-width: 260px;
+        }
+
+        .signatures-col {
+            flex: 1;
+            background: #faf9f7;
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            border: 1px solid #f0e5da;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #2d3e3a;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border-radius: 1rem;
+            border: 1.5px solid #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #e35f21;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 1rem 0;
+        }
+
+        .checkbox-group input {
+            width: 22px;
+            height: 22px;
+            margin: 0;
+        }
+
+        button {
+            background: #e35f21;
+            color: white;
+            border: none;
+            padding: 1rem;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 1.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #bf4b13;
+            transform: translateY(-2px);
+        }
+
+        .signature-list {
+            max-height: 340px;
+            overflow-y: auto;
+            margin-top: 0.8rem;
+        }
+
+        .signature-item {
+            background: white;
+            padding: 0.6rem 0.9rem;
+            margin-bottom: 0.6rem;
+            border-radius: 1rem;
+            border-left: 4px solid #e35f21;
+        }
+
+        .signature-name {
+            font-weight: 700;
+        }
+
+        .signature-country {
+            font-size: 0.7rem;
+            color: #8b6b4f;
+            display: inline-block;
+            background: #f0e5da;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            margin-top: 4px;
+        }
+
+        .alert {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            background: #fbe9e7;
+            color: #b33;
+            display: none;
+        }
+
+        .alert.success {
+            background: #e0f2e9;
+            color: #1f7840;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 1.8rem;
+            font-size: 0.75rem;
+            color: #cbd5e0;
+        }
+
+        @media (max-width: 750px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .counter-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="petition-card">
+            <div class="hero">
+                <h1>✊ BOYCOTT CANAL+ AFRIQUE <span>50$/mois</span></h1>
+                <p>Pas de Coupe du Monde diffusée, pas de liue de champion le mardi , pas de championnat d'europe
+                    diffusé en Afrique ? Nous disons STOP. Signez pour exiger le respect des
+                    abonnés africains.</p>
+            </div>
+            <div class="content">
+                <div class="stats">
+                    <h3>📢 SIGNATURES COLLECTÉES</h3>
+                    <div class="counter-number" id="signatureCount">0</div>
+                    <progress id="progressBar" value="0" max="100000"></progress>
+                    <div class="target-text">🎯 Objectif : 100 000 citoyens engagés</div>
+                </div>
+
+                <div
+                    style="background:#fef0e6; border-radius:1rem; padding:0.8rem 1rem; margin-bottom:1.5rem; border-left:5px solid #e35f21;">
+                    <p style="font-weight:700">⚠️ Nos exigences :</p>
+                    <ul style="margin-left:1.2rem; font-size:0.85rem;">
+                        <li>Diffusion de la Coupe du Monde en Afrique sans augmentation</li>
+                        <li>Réduction de l'abonnement à 15$/mois si absent</li>
+                        <li>Remboursement partiel pour les abonnés lésés</li>
+                    </ul>
+                </div>
+
+                <div class="two-columns">
+                    <div class="form-col">
+                        <form id="petitionForm">
+                            <div class="form-group">
+                                <label>Nom complet *</label>
+                                <input type="text" id="fullname" placeholder="Ex: Amina Diallo" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Adresse email *</label>
+                                <input type="email" id="email" placeholder="votre@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Pays *</label>
+                                <select id="country" required>
+                                    <option value="">Sélectionnez</option>
+                                    <option>Côte d'Ivoire</option>
+                                    <option>Sénégal</option>
+                                    <option>Cameroun</option>
+                                    <option>Mali</option>
+                                    <option>Burkina Faso</option>
+                                    <option>République Dém. du Congo</option>
+                                    <option>Gabon</option>
+                                    <option>Bénin</option>
+                                    <option>Togo</option>
+                                    <option>Niger</option>
+                                    <option>Guinée</option>
+                                    <option>Madagascar</option>
+                                    <option>Autre pays africain</option>
+                                </select>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="engagement" required>
+                                <label>✔️ Je m’engage à boycotter Canal+ et à résilier mon abonnement si la Coupe du
+                                    monde n’est pas diffusée.</label>
+                            </div>
+                            <button type="submit">🗳️ SIGNER LA PÉTITION</button>
+                        </form>
+                        <div id="messageAlert" class="alert"></div>
+                    </div>
+
+                    <div class="signatures-col">
+                        <div style="font-weight:700; margin-bottom:12px;">🕊️ Derniers soutiens</div>
+                        <div id="signatureListContainer" class="signature-list">
+                            <div class="empty-list">Chargement des signatures...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>📢 Mouvement citoyen panafricain — Boycott pacifique et déterminé</footer>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin; // Utilise le même serveur
+
+        async function fetchSignatures() {
+            try {
+                const response = await fetch(`${API_BASE}/api/signatures`);
+                const data = await response.json();
+                document.getElementById('signatureCount').innerText = data.total.toLocaleString();
+                const progress = document.getElementById('progressBar');
+                progress.value = Math.min(data.total, 100000);
+                progress.max = 100000;
+
+                const container = document.getElementById('signatureListContainer');
+                if (data.recent.length === 0) {
+                    container.innerHTML = '<div class="empty-list">Soyez le premier à signer ! ✊</div>';
+                    return;
+                }
+                container.innerHTML = data.recent.map(sig => `
+                <div class="signature-item">
+                    <div class="signature-name">${escapeHtml(sig.name)}</div>
+                    <div class="signature-country">📍 ${escapeHtml(sig.country)}</div>
+                    <div style="font-size:0.65rem; color:#b3a084; margin-top:5px;">${formatDate(sig.date)}</div>
+                </div>
+            `).join('');
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function (m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return 'Récemment';
+            try {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+            } catch (e) { return 'Nouveau'; }
+        }
+
+        function showMessage(msg, isSuccess) {
+            const alertDiv = document.getElementById('messageAlert');
+            alertDiv.innerText = msg;
+            alertDiv.className = 'alert ' + (isSuccess ? 'success' : '');
+            alertDiv.style.display = 'block';
+            setTimeout(() => { alertDiv.style.display = 'none'; }, 5000);
+        }
+
+        document.getElementById('petitionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const country = document.getElementById('country').value;
+            const engagement = document.getElementById('engagement').checked;
+
+            if (!name || !email || !country) {
+                showMessage("⚠️ Veuillez remplir tous les champs.", false);
+                return;
+            }
+            if (!email.includes('@')) {
+                showMessage("📧 Adresse email invalide.", false);
+                return;
+            }
+            if (!engagement) {
+                showMessage("Vous devez accepter l'engagement pour signer.", false);
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/api/sign`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, country })
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    showMessage("✅ Signature enregistrée ! Merci. Partagez la pétition.", true);
+                    document.getElementById('petitionForm').reset();
+                    fetchSignatures(); // Rafraîchit le compteur et la liste
+                } else {
+                    showMessage(result.error || "Erreur lors de l'enregistrement.", false);
+                }
+            } catch (err) {
+                showMessage("Erreur réseau. Réessayez plus tard.", false);
+            }
+        });
+
+        // Chargement initial
+        fetchSignatures();
+    </script>
+</body>
+
+</html>
